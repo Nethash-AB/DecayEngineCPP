@@ -1,0 +1,8 @@
+#ifndef DECAYENGINE_VECTOR3_HPP
+#define DECAYENGINE_VECTOR3_HPP
+
+class Vector3 {
+
+};
+
+#endif //DECAYENGINE_VECTOR3_HPP

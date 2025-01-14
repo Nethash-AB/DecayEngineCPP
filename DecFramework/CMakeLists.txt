@@ -1,0 +1,90 @@
+project(DecFramework)
+
+SET(DecFramework_HEADERS
+    include/Capability/Activation/IActivable.hpp
+    include/Capability/Activation/ILoadable.hpp
+    include/Capability/Conversion/IConvertible.hpp
+    include/Capability/Equality/IEquatable.hpp
+    include/Capability/Invocation/IInvocable.hpp
+    include/Capability/Tracking/IDatabaseIdTrackable.hpp
+    include/Database/IDatabaseId.hpp
+    include/Database/IObjectDatabase.hpp
+    include/Event/EventHandler.hpp
+    include/Exception/ArgumentException.hpp
+    include/Exception/ArgumentOutOfRangeException.hpp
+    include/Exception/DependencyNodeNotFoundException.hpp
+    include/Exception/EngineException.hpp
+    include/Exception/EngineObjectNotFoundException.hpp
+    include/Exception/FormatException.hpp
+    include/Exception/EngineObjectImplementationAlreadyRegisteredException.hpp
+    include/Exception/EngineObjectImplementationNotFoundException.hpp
+    include/Expression/DependencyNodeOfType.hpp
+    include/Expression/IExpression.hpp
+    include/Graph/IGraphController.hpp
+    include/Graph/IDependencyNode.hpp
+    include/Log/LogController.hpp
+    include/Log/Logger.hpp
+    include/Log/LogSeverity.hpp
+    include/Object/ComponentObject.hpp
+    include/Object/EngineObject.hpp
+    include/Object/EngineObjectImplementation.hpp
+    include/Object/EngineObjectType.hpp
+    include/Object/GameObject.hpp
+    include/Object/PropertyObject.hpp
+    include/Object/ResourceObject.hpp
+    include/Object/SceneObject.hpp
+    include/Object/WorldObject.hpp
+    include/SubSystem/Extension/IEngineExtension.hpp
+    include/SubSystem/Input/IInputSubSystem.hpp
+    include/SubSystem/Physics/IPhysicsSubSystem.hpp
+    include/SubSystem/Render/IRenderSubSystem.hpp
+    include/SubSystem/Script/IScriptSubSystem.hpp
+    include/SubSystem/Sound/ISoundSubSystem.hpp
+    include/SubSystem/ISubSystem.hpp
+    include/Thread/NativeThreadRunner.hpp
+    include/Thread/ThreadRunner.hpp
+    include/Time/StopWatch.hpp
+    include/Time/Time.hpp
+    include/Tracking/DecayObjectTracker.hpp
+    include/Tracking/IDecayObject.hpp
+    include/Util/ConstantCounter.hpp
+    include/Util/String.hpp
+    include/Delegate.hpp
+    include/EngineSdk.hpp
+    include/Enum.hpp
+    include/Function.hpp
+    include/IGlobalEnvironment.hpp
+    include/ITask.hpp
+    include/Task.hpp
+)
+
+SET(DecFramework_SOURCES
+    src/Exception/ArgumentException.cpp
+    src/Exception/ArgumentOutOfRangeException.cpp
+    src/Exception/DependencyNodeNotFoundException.cpp
+    src/Exception/EngineException.cpp
+    src/Exception/EngineObjectNotFoundException.cpp
+    src/Exception/FormatException.cpp
+    src/Exception/EngineObjectImplementationAlreadyRegisteredException.cpp
+    src/Exception/EngineObjectImplementationNotFoundException.cpp
+    src/Object/ComponentObject.cpp
+    src/Object/EngineObject.cpp
+    src/Object/GameObject.cpp
+    src/Object/PropertyObject.cpp
+    src/Object/ResourceObject.cpp
+    src/Object/SceneObject.cpp
+    src/Object/WorldObject.cpp
+    src/Thread/NativeThreadRunner.cpp
+    src/Thread/ThreadRunner.cpp
+    src/Time/StopWatch.cpp
+)
+
+add_library(DecFramework STATIC ${DecFramework_SOURCES} ${DecFramework_HEADERS})
+
+target_include_directories(DecFramework
+    PUBLIC
+        $<INSTALL_INTERFACE:include>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/src
+)
