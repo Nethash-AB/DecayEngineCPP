@@ -4,7 +4,14 @@
 
 ----
 
-## DecayEngine C++
+<br />
+
+<div style="text-align:center">
+    <img src ="decay-engine.png"/>
+</div>
+
+<br />
+<br />
 
 DecayEngine is a proprietary engine developed using .NET Core 3.1 that works on Windows (Win32 and UWP), Linux, Android, XBox, PS4, and Switch.  
 The engine was internally developed by [@bilenkonito](https://github.com/bilenkonito) between 2019 and 2020 for usage in Rust Racers. The project is no longer maintained as development on Rust Racers switched to Unreal Engine 5.  
